@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<title>stack</title>
+
+<body>
+
+	<script>
+		function Stack() {
+			var items = [];
+			this.push = function (element) {
+				items.push(element);
+			};
+			this.pop = function () {
+				items.pop();
+			};
+			this.peek = function () {
+				return items[items.length - 1];
+			};
+			this.isEmpty = function () {
+				return items.length == 0;
+			};
+			this.clear = function () {
+				items.length = 0;
+			};
+			this.size = function () {
+				return items.length;
+			}
+		}
+		var stack = new Stack();
+		console.log(stack.size());
+	</script>
+</body>
+
+</html>

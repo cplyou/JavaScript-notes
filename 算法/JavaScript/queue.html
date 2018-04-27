@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<title>queue</title>
+
+<body>
+
+    <script>
+        function Queue() {
+            var items = [];
+            this.enqueue = function (element) {
+                items.push(element);
+            };
+            this.dequeue = function () {
+                return items.shift();
+            };
+            this.front = function () {
+                return items[0];
+            };
+            this.isEmpty = function () {
+                return items.length == 0;
+            }
+            this.print = function () {
+                console.log(items.toString());
+            }
+        }
+        var queue = new Queue();
+    </script>
+</body>
+
+</html>
