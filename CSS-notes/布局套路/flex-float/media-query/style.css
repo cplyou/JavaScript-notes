@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.parent{
+    margin-left: auto;
+    margin-right: auto;
+    background: #ddd;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom: 1;/*ie6*/
+}
+.child {
+    color: white;
+}
+.child:nth-child(1) {
+    float: left;
+    width: 10%;
+    text-align: center;
+    line-height: 24px;
+    padding: 6px 0;
+    background-color: #533;
+}
+
+.child:nth-child(2) {
+    float: right;
+}
+/* float布局会使元素脱离文档，
+   父元素里面没有内容就会没有高度
+   所以需要添加clearfix,使用content添加空字符串
+*/
+.parent .nav2{
+    display: none;
+}
+@media(max-width: 420px){
+    .parent .nav2{
+        display: block;
+    }
+    .parent .nav{
+        display: none;
+    }
+}
+
+.nav{
+    line-height: 24px;
+    padding: 6px 0;
+}
+
+.item {
+    float: left;
+    margin-left: 20px;
+}
+
+/*****/
+.banner{
+    width: 800px;
+    height: 300px;
+    background: #888;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+@media(max-width: 420px){
+   .banner{width: auto;}
+}
+
+
+.pictures{
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+   /* justify-content: space-between;有bug */
+}
+
+@media(max-width: 420px){
+    .pictures{width: auto;}
+ }
+
+.pictures>.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4px;
+}
+.picture{
+    width: calc(25% - 8px);/*calc两个值之间要有空格ie不兼容*/
+    height: 194px;
+    background: #d5d;
+    margin: 4px;
+}
+
+@media(max-width: 420px){
+    .picture{width: calc(50% - 8px);}
+}
+
+
+.art{
+    background: #ddd;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(max-width: 420px){
+    .art{
+        width: auto;
+        flex-direction: column; 
+    }
+}
+
+.art>.sider{
+    border: 1px solid black;
+    width: calc(33.333333% - 20px);
+    height: 300px;
+    /* margin-right: auto; */  
+}
+
+@media(max-width: 420px){
+    .art>.sider{
+        width: auto;
+        height: auto;
+    }
+}
+
+.art>.main{
+    border: 1px solid rgb(226, 99, 99);
+    width: 66.666666%;
+    height: 300px;
+}
+
+@media(max-width: 420px){
+    .art>.main{
+        width: auto;
+        height: auto;
+    }
+}
+
